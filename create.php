@@ -74,8 +74,16 @@ foreach ($slots as $slot) {
     $data['slots'][] = [
         'slot_id' => $counter,
         'time' => $slot,
+
         'reserved' => false,
+
         'name' => '',
+        'email' => '',
+
+        'cancel_token' => '',
+
+        'reserved_at' => '',
+
         'memo' => ''
     ];
 
