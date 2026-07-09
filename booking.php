@@ -3,6 +3,39 @@
 $id = $_POST['id'] ?? '';
 $slotId = intval($_POST['slot_id'] ?? 0);
 $name = trim($_POST['name'] ?? '');
+$email = trim($_POST['email'] ?? '');
+if (
+    $email !== '' &&
+    !filter_var($email, FILTER_VALIDATE_EMAIL)
+) {
+    die('メールアドレスの形式が正しくありません。');
+}
+$cancelToken = bin2hex(random_bytes(16));
+
+$scheme =
+(
+    !empty($_SERVER['HTTPS']) &&
+    $_SERVER['HTTPS'] !== 'off'
+)
+? 'https'
+: 'http';
+
+$host = $_SERVER['HTTP_HOST'];
+
+$scriptDir = dirname($_SERVER['SCRIPT_NAME']);
+
+$basePath =
+    ($scriptDir === '/' || $scriptDir === '.')
+    ? ''
+    : $scriptDir;
+
+$cancelUrl =
+    $scheme .
+    '://' .
+    $host .
+    $basePath .
+    '/cancel.php?token=' .
+    urlencode($cancelToken);
 
 if ($id === '' || $slotId === 0 || $name === '') {
     die('入力内容に誤りがあります。');
@@ -73,6 +106,9 @@ foreach ($data['slots'] as &$slot) {
 
         $slot['reserved'] = true;
         $slot['name'] = $name;
+        $slot['email'] = $email;
+        $slot['cancel_token'] = $cancelToken;
+        $slot['reserved_at'] = date('Y-m-d H:i:s');
 
         $success = true;
 
@@ -156,6 +192,16 @@ rel="stylesheet">
                         <?= htmlspecialchars($message) ?>
 
                     </p>
+
+                    <div class="alert alert-warning mt-3">
+                        このURLを保存してください。<br>
+                    キャンセル時に使用します。
+                    </div>
+
+                    <input
+                        class="form-control"
+                        value="<?= htmlspecialchars($cancelUrl) ?>"
+                    readonly>
 
                 </div>
 
