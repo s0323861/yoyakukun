@@ -88,14 +88,20 @@ rel="stylesheet">
                                     value="<?= $slot['slot_id'] ?>">
 
                                 <div class="mb-3">
-
                                     <input
                                         type="text"
                                         name="name"
                                         class="form-control"
                                         placeholder="お名前"
                                         required>
+                                </div>
 
+                                <div class="mb-3">
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="メールアドレス（任意）">
                                 </div>
 
                                 <button
