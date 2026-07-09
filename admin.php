@@ -158,6 +158,14 @@ rel="stylesheet">
                                         <?= htmlspecialchars($slot['name']) ?>
                                     </strong>
 
+                                    <?php if ($slot['email'] !== ''): ?>
+
+                                        <div class="small text-muted">
+                                            <?= htmlspecialchars($slot['email']) ?>
+                                        </div>
+
+                                    <?php endif; ?>
+
                                 <?php else: ?>
 
                                     <span class="text-muted">
@@ -172,9 +180,33 @@ rel="stylesheet">
 
                                 <?php if ($slot['reserved']): ?>
 
-                                    <span class="badge bg-success">
+                                    <span class="badge bg-success mb-2">
                                         予約済み
                                     </span>
+
+                                    <form
+                                        action="admin_cancel.php"
+                                        method="post">
+
+                                        <input
+                                            type="hidden"
+                                            name="id"
+                                            value="<?= htmlspecialchars($id) ?>">
+
+                                        <input
+                                            type="hidden"
+                                            name="slot_id"
+                                            value="<?= $slot['slot_id'] ?>">
+
+                                        <button
+                                            type="submit"
+                                            class="btn btn-danger btn-sm">
+
+                                            キャンセル
+
+                                        </button>
+
+                                    </form>
 
                                 <?php else: ?>
 
