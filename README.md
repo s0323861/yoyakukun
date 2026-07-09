@@ -106,6 +106,3 @@ https://tsukuba42195.sakura.ne.jp/yoyakukun/
 MIT License
 
 自由に利用・改変・再配布できます。
-## License
-
-MIT
