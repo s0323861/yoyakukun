@@ -169,6 +169,18 @@ rel="stylesheet">
 
 <body>
 
+<nav class="navbar navbar-dark bg-primary shadow-sm mb-4">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="./">
+            📅 予約くん
+        </a>
+
+        <span class="navbar-text text-white">
+            シンプルな予約管理サービス
+        </span>
+    </div>
+</nav>
+
 <div class="container py-5">
 
     <div class="card shadow">
@@ -234,6 +246,15 @@ rel="stylesheet">
     </div>
 
 </div>
+
+<footer class="bg-light text-center text-muted py-3 mt-5 border-top">
+    <div class="container">
+        <small>
+            © 2026 予約くん |
+            Powered by PHP & Bootstrap 5
+        </small>
+    </div>
+</footer>
 
 </body>
 </html>
