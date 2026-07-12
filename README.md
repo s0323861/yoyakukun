@@ -1,3 +1,7 @@
+![PHP](https://img.shields.io/badge/PHP-8.x-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 # 予約くん
 
 登録不要・URLを発行するだけですぐに予約受付を開始できる、シンプルで軽量な予約システムです。
@@ -98,6 +102,15 @@ git clone https://github.com/s0323861/yoyakukun.git
 ## デモ
 
 https://tsukuba42195.sakura.ne.jp/yoyakukun/
+
+---
+
+## 作者
+
+向井聡（Akira Mukai）
+
+- Blog: https://s0323861.github.io/
+- GitHub: https://github.com/s0323861
 
 ---
 
