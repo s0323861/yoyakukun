@@ -10,6 +10,12 @@ PHPとBootstrap 5で構築されており、個人レッスン、面談予約、
 
 ---
 
+## デモ
+
+![Application Demo](demo.gif)
+
+---
+
 ## 主な機能
 
 * 登録不要ですぐ利用開始
